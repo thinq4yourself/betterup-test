@@ -7,8 +7,8 @@
 -->
 Just clone this [branch](https://github.com/thinq4yourself/makeme-react):
 ```sh
-$ git clone -b master https://github.com/thinq4yourself/makeme-react ct-app
-$ cd ct-app
+$ git clone -b master https://github.com/thinq4yourself/makeme-react react-app
+$ cd react-app
 ```
 
 You will probably want to remove git history and start a brand new repository:

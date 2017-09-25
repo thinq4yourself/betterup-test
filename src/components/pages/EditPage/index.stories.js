@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@kadira/storybook'
-import { ApiPage } from 'components'
+import { EditPage } from 'components'
 
-storiesOf('ApiPage', module)
+storiesOf('EditPage', module)
   .add('default', () => (
-    <ApiPage />
+    <EditPage />
   ))

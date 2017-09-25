@@ -1,6 +1,6 @@
 # Getting Started
 
-## Setting up your project
+## Setting up the project
 ### 1. Get the source code
 
 #### Cloning the repository
@@ -9,12 +9,6 @@ Just clone this [branch](https://github.com/thinq4yourself/betterup-test):
 ```sh
 $ git clone -b master https://github.com/thinq4yourself/betterup-test react-app
 $ cd react-app
-```
-
-You will probably want to remove git history and start a brand new repository:
-```sh
-$ rm -rf .git
-$ git init
 ```
 
 ### 2. Install dependencies
@@ -26,7 +20,7 @@ $ npm install
 ### 3. Run the app
 
 ```sh
-$ npm start run dev
+$ npm start
 ```
 OR
 ```sh
@@ -61,9 +55,9 @@ dist
 
 ## Standard Workflow
 
-This boilerplate is structured in a way that makes it easier to work on different parts of the application with distinct focuses.
+This is structured in a way that makes it easier to work on different parts of the application with distinct focuses.
 
-When introducing a new feature or even starting the project from scratch:
+When introducing a new feature:
 
 1. **Create [`presentational components`](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)**
 
@@ -90,4 +84,4 @@ Examples of services:
 - `validation` - basic validation helper for forms.
 
 ## Webpack
-We use [`webpack-blocks`](https://github.com/andywer/webpack-blocks) to provide a minimal and modular webpack config. 
+This uses [`webpack-blocks`](https://github.com/andywer/webpack-blocks) to provide a minimal and modular webpack config. 

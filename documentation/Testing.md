@@ -1,7 +1,7 @@
 ## Testing
 
 ## Testing Components
-This boilerplate uses [Jest](http://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) for testing components.
+This app uses [Jest](http://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) for testing components.
 
 Each test file lives inside the component folder with a standard name (`index.test.js`). That's a basic and common test:
 ```jsx

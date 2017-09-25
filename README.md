@@ -49,8 +49,6 @@ $ git commit -m "My commit notes"
 $ git push origin my-feature-branch
 ```
 
-Now make a PR on the `development` branch. ravis will deploy it from there. 
-
 ---
 
 ### Source code
@@ -69,7 +67,7 @@ import routes from 'routes' // src/routes
 
 ### Storybook
 
-This boilerplate incorporates [react-storybook](https://github.com/storybooks/react-storybook) for the development process. It helps improve productivity and developer experience. Most of the time we just use the `storybook` instead of the real webapp while creating components.
+This app incorporates [react-storybook](https://github.com/storybooks/react-storybook) for the development process. It helps improve productivity and developer experience. Most of the time we can just use the `storybook` instead of the real webapp while creating components.
 
 You can simply use `npm run storybook` to get it running.
 
@@ -97,9 +95,9 @@ To better understand this methodology, you can refer to the [`src/components`](s
 
 ### Containers
 
-We use a very straight approach of Redux: all components should be as [pure](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.ly1b33jnz) as possible and should be placed in the `components` folder.
+This app usedW a very straight approach of Redux: all components should be as [pure](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.ly1b33jnz) as possible and should be placed in the `components` folder.
 
-If, for some reason,youwe need to connect a component to the store, just create a container with the same name, import the pure component and connect it. Thus having a nice separation of concerns. 
+If, for some reason, we need to connect a component to the store, we just create a container with the same name, import the pure component and connect it. Thus having a nice separation of concerns. Easy peasy.
 
 > __**Do not add any extra styles or another presentational logic in containers**__.
 
@@ -182,7 +180,7 @@ Here lives all the state management of the app.
 - `selectors` are used by the application to get parts of the current state. [Learn more](http://redux.js.org/docs/recipes/ComputingDerivedData.html);
 - `sagas` listen to the actions and are responsible for performing side effects, like data fetching, caching etc. [Learn more](https://github.com/yelouafi/redux-saga).
 
-To add a new store, just create a new folder with actions, reducer, selectors and/or sagas. Webpack will automatically import them to the project 
+To add a new store, we just create a new folder with actions, reducer, selectors and/or sagas. Webpack will automatically import them to the project  (boom!)
 
 > How? See [`src/store/actions.js`](src/store/actions.js), [`src/store/reducer.js`](src/store/reducer.js), [`src/store/sagas.js`](src/store/sagas.js) and [`src/store/selectors.js`](src/store/selectors.js)).
 
@@ -190,18 +188,18 @@ To add a new store, just create a new folder with actions, reducer, selectors an
 
 The store follows some naming conventions. 
 
-- `actions` should start with the store name (e.g. `MODAL_OPEN` for `modal` store, `DONOR_LIST_REQUEST` for `donor` store) and end with `REQUEST`, `SUCCESS` or `FAILURE` if this is an async operation;
-- `action creators` should have the same name of their respective actions, but in camelCase (e.g. `modalOpen`). Async actions should group `request`, `success` and `failure` in a object (e.g. `donorList.request`, `donorList.success`, `donorList.failure`);
-- `worker sagas` should start with the operation name (e.g. `openModal`, `requestDonorList`).
+- `actions` starts with the store name (e.g. `MODAL_OPEN` for `modal` store, `DONOR_LIST_REQUEST` for `donor` store) and ends with `REQUEST`, `SUCCESS` or `FAILURE` if this is an async operation;
+- `action creators` has the same name of their respective actions, but in camelCase (e.g. `modalOpen`). Async actions group `request`, `success` and `failure` in a object (e.g. `donorList.request`, `donorList.success`, `donorList.failure`);
+- `worker sagas` start with the operation name (e.g. `openModal`, `requestDonorList`).
 
 ---
 
 ## Styling
-Our Webpack config supports CSS style loading (`style-loader`) so that files that can be used for overrides and custom classes on components as opposed to inline Javscript (JSX) for each component.  
+The Webpack config supports CSS style loading (`style-loader`) so that files that can be used for overrides and custom classes on components as opposed to inline Javscript (JSX) for each component.  
 
 
 ### Styled Components
-This boilerplate uses [`styled-components`](https://styled-components.com/) to lay a base style foundation and derive a sample layout and grid system. It also has a few more common components to work with out of `styled-components`, in order to make light and easy work for repetitive tasks (like building pages and templates).
+This app uses [`styled-components`](https://styled-components.com/) to lay a base style foundation and derive a sample layout and grid system. It also has a few more common components to work with out of `styled-components`, in order to make light and easy work for repetitive tasks (like building pages and templates).
 
 Utilising tagged template literals and the power of CSS, `styled-components` allows you to write actual CSS code to style components. It also removes the mapping between components and styles – using components as a low-level styling construct is very easy this way. 
 
@@ -250,7 +248,7 @@ To focus on custom styling the Material UI components, you have two methods:
 1. [Overriding with Inline Styles](http://www.material-ui.com/#/customization/styles#overriding-with-inline-styles)
 2. [Overriding with CSS Styles](http://www.material-ui.com/#/customization/styles#overriding-with-css-styles)
 
-> We currently prefer method 2 (example below), but 1 is just as effective and may be less problematic (does not require any Webpack config or special loaders at runtime).
+> I prefer method 2 (example below), but 1 is just as effective and may be less problematic (does not require any Webpack config or special loaders at runtime).
 
 #### Examples:
 #### I. Inline approach
@@ -298,7 +296,7 @@ render ({
 ```
 
 #### CSS approach:
-In your component you may want to have a `_styles.css` sheet available which can be imported, so any changes to it will automatically get imported and applied to the Material UI components (or other html/component/DOM objects).
+In a component you may want to have a `_styles.css` sheet available which can be imported, so any changes to it will automatically get imported and applied to the Material UI components (or other html/component/DOM objects).
 
 ```css
 /* Pure CSS overrides & customization */
@@ -308,7 +306,7 @@ form h2 {color: #e2001a}
 > Here we simply change the color of an H2 tag. 
 
 ##### Try it for yourself:
-> 1. Update latest from source `$ git pull origin development`
+> 1. Update latest from source `$ git pull origin master`
 > 2. `$ cd frontend && npm start` to start the app running and browse to http://localhost:3000
 > 3. Create and open component_name/_styles.css
 > 4. Update some CSS in that file... 

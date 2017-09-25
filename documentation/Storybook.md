@@ -1,5 +1,5 @@
 # Storybook
-We incorporate [react-storybook](https://github.com/storybooks/react-storybook) for the development process. It helps improve productivity and developer experience. Most of the time we just use the `storybook` instead of the real webapp while creating components.
+[react-storybook](https://github.com/storybooks/react-storybook) is used for the development process. It helps improve productivity and developer experience. Most of the time we just use the `storybook` instead of the real webapp while creating components.
 
 During the creation of a new component, we'll want to test it in a browser. Usually, we'll render it in a top level component with every possible state so we can check if it's working properly:
 ```jsx
@@ -34,11 +34,3 @@ storiesOf('MyNewAwesomeComponent', module)
 ```
 
 Then, just run `npm run storybook`.
-
-### Removing storybook
-
-If you don't want to use Storybook in your project, just run:
-```sh
-rm -rf .storybook # remove .storybook folder
-npm un -D @storybook/react # remove storybook dependency
-```

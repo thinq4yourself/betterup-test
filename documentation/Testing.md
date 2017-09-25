@@ -15,7 +15,7 @@ it('renders children when passed in', () => {
 })
 ```
 
-All components except the one being tested are mocked in [`test/componentsMock.js`](https://github.com/thinq4yourself/makeme-react/src/test/componentsMock.js). That makes it easier to write real unit tests.
+All components except the one being tested are mocked in [`test/componentsMock.js`](https://github.com/thinq4yourself/betterup-test/src/test/componentsMock.js). That makes it easier to write real unit tests.
 
 ---
 
@@ -30,7 +30,7 @@ expect(getList(getState())).toEqual([
   { title: 'foo' },
 ])
 ```
-<sup>See [src-example/store/resource/test.js](https://github.com/thinq4yourself/makeme-react/src/store/resource/test.js)</sup>
+<sup>See [src-example/store/resource/test.js](https://github.com/thinq4yourself/betterup-test/src/store/resource/test.js)</sup>
 
 Unit testing Redux is very easy, but that's often too much work, repetitive and sometimes it's impossible to do [TDD](https://en.wikipedia.org/wiki/Test-driven_development). In other words, it can be hard to write tests before writing actual code because tests are very coupled to their implementations.
 

@@ -5,9 +5,9 @@
 
 #### Cloning the repository
 -->
-Just clone this [branch](https://github.com/thinq4yourself/makeme-react):
+Just clone this [branch](https://github.com/thinq4yourself/betterup-test):
 ```sh
-$ git clone -b master https://github.com/thinq4yourself/makeme-react react-app
+$ git clone -b master https://github.com/thinq4yourself/betterup-test react-app
 $ cd react-app
 ```
 

@@ -3,7 +3,7 @@
 
 ## API Service
 
-The API service ([`src/services/api`](https://github.com/thinq4yourself/makeme-react/src/services/api/index.js)) is a convenient wrapper around [`fetch`](https://github.com/github/fetch).
+The API service ([`src/services/api`](https://github.com/thinq4yourself/betterup-test/src/services/api/index.js)) is a convenient wrapper around [`fetch`](https://github.com/github/fetch).
 
 ### Basic usage
 ```js
@@ -18,7 +18,7 @@ api.post('/resources', { title: 'Hello, World!' })
 const data = yield call([api, api.post], '/resources', { title: 'Hello, World!' })
 ```
 
-As you can see, we don't need to specify the API domain. It'll automatically prepend `apiUrl` set in [`src/config.js`](https://github.com/thinq4yourself/makeme-react/src/config.js#L6). But you can, of course, pass any API domain:
+As you can see, we don't need to specify the API domain. It'll automatically prepend `apiUrl` set in [`src/config.js`](https://github.com/thinq4yourself/betterup-test/src/config.js#L6). But you can, of course, pass any API domain:
 
 ```js
 api.get('https://api.github.com/users/octocat/orgs')
@@ -405,7 +405,7 @@ As you may have noticed, the selector above is defined outside of the resource m
 
  Modules themselves don't know their property names (`resource`, `status`) on the root state because it's defined on `src/store/reducer.js`.
 
-The solution is mapping all modules selectors in [`src/store/selectors.js`](https://github.com/thinq4yourself/makeme-react/src/store/selectors.js) passing the respective property names to them, while, inside modules, we can create selectors based only on the module's state structure:
+The solution is mapping all modules selectors in [`src/store/selectors.js`](https://github.com/thinq4yourself/betterup-test/src/store/selectors.js) passing the respective property names to them, while, inside modules, we can create selectors based only on the module's state structure:
 ```js
 // src/store/resource/selectors.js
 export const getList = state => state.list

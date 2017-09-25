@@ -1,4 +1,4 @@
-## React Redux Boilerplate
+## Betterup test
 A Redux app
 
 
@@ -7,8 +7,8 @@ A Redux app
 Just clone the repository folder:
 
 ```sh
-$ git clone -b universal https://github.com/thinq4yourself/makeme-react/src ct-app
-$ cd ct-app
+$ git clone -b universal https://github.com/thinq4yourself/betterup-test/src bt-app
+$ cd bt-app
 $ npm install # or yarn
 ```
 
@@ -58,7 +58,7 @@ Now make a PR on the `development` branch. ravis will deploy it from there.
 - The source code should stay in `src`
 - `static` files should stay in `public` so they can be included in the build process.
 
-Because of [webpack's config](https://github.com/thinq4yourself/makeme-react/webpack.config.js#L19-L21), we can import our source modules without relative paths.
+Because of [webpack's config](https://github.com/thinq4yourself/betterup-test/webpack.config.js#L19-L21), we can import our source modules without relative paths.
 ```js
 import { Button, HomePage } from 'components' // src/components
 import App from 'components/App' // src/components/App
@@ -89,7 +89,7 @@ To better understand this methodology, you can refer to the [`src/components`](s
 
 - An **element** is a native html tag or a React Component that renders an html tag (e.g [`Input`](src/components/elements/Input/index.js));
 - A **module** is a group of elements (e.g. [`Field`](src/components/modules/Field/index.js));
-- An **views** are a group of elements, modules and/or other collections (e.g. [`Form`](https://github.com/thinq4yourself/makeme-react/src/components/organisms/PostForm/index.js));
+- An **views** are a group of elements, modules and/or other collections (e.g. [`Form`](https://github.com/thinq4yourself/betterup-test/src/components/organisms/PostForm/index.js));
 - A **page** is... a page, where you will put mostly views (e.g. [`HomePage`](src/components/pages/HomePage/index.js));
 - A **template** is a layout to be used on pages.
 
@@ -210,7 +210,7 @@ Styled Components makes it [is easy to work with CSS](https://github.com/styled-
 Here are [some tips and tricks](https://github.com/styled-components/styled-components/blob/master/docs/tips-and-tricks.md) for working with Styled Components (advanced). 
 
 #### Example
-To see an example of styling `styled-components` in action - see how we're using tagged template literals to write CSS for our [main layout template (`PageTemplate`)(https://github.com/thinq4yourself/makeme-react/src/components/templates/PageTemplate/index.js):
+To see an example of styling `styled-components` in action - see how we're using tagged template literals to write CSS for our [main layout template (`PageTemplate`)(https://github.com/thinq4yourself/betterup-test/src/components/templates/PageTemplate/index.js):
 
 ```javascript
 const Wrapper = styled.div`
@@ -323,10 +323,10 @@ Theming is a first class citizen in the app - and two global themes are provided
 
 #### Styled Components Theme: 
 The Styled Theme Provider config is located in:
-- [/src/components/themes/default.js](https://github.com/thinq4yourself/makeme-react/src/components/themes/default.js)
+- [/src/components/themes/default.js](https://github.com/thinq4yourself/betterup-test/src/components/themes/default.js)
 
 #### Material UI Theme: 
 The MUI Theme Provider config is located in:
-- [/src/components/themes/default-material.js](https://github.com/thinq4yourself/makeme-react/src/components/themes/default-material.js)
+- [/src/components/themes/default-material.js](https://github.com/thinq4yourself/betterup-test/src/components/themes/default-material.js)
 
 ---

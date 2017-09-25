@@ -30,7 +30,6 @@ const config = createConfig([
     app: sourcePath,
     mui: 'material-ui',
     styled: 'styled-components',
-    storybook: '@kadira/storybook',
   }),
   setOutput({
     filename: '[name].[hash].js',

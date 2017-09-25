@@ -61,26 +61,24 @@ When introducing a new feature:
 
 1. **Create [`presentational components`](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)**
 
-    We'll usually start by writing dumb components, just focusing on presentational logic. [`Storybook`](./Storybook.md) can help us with that very nicely. 
-
-2. **Create [`containers`](./Containers.md)**
+2. **Create [`containers`](#)**
   
-    Then, we can focus on what that feature will do with the app state ([`actions`](./Actions.md)) and which part of the state it will need ([`selectors`](./Selectors.md)).
+    Then, we can focus on what that feature will do with the app state (`actions`) and which part of the state it will need (`selectors`).
 
 3. **Write [`redux module tests`](./Testing.md#Testing-Redux)** (recommended)
 
-    After creating containers, we'll have a good sense of what [`actions`](./Actions.md) and [`selectors`](./Selectors.md) we'll need. We can write integration tests to make sure that we'll have proper state when dispatching an action.
+    After creating containers, we'll have a good sense of what `actions` and `selectors` we'll need. We can write integration tests to make sure that we'll have proper state when dispatching an action.
 
-4. **Create [`redux modules`](./ReduxModules.md)**
+4. **Create [`redux modules`](./Redux.md)**
 
-    The last step is to figure out how [`reducers`](./Reducers) and/or [`sagas`](./Sagas) will respond to dispatched actions so we can modify the app state and/or make side effects.
+    The last step is to figure out how `reducers` and/or `sagas` will respond to dispatched actions so we can modify the app state and/or make side effects.
 
 ## Services
 We can think of a service as an internal `node_modules` folder. Instead of separating our modules into `utils`, `helpers`, `middlewares` etc., which makes us waste more time thinking where to put our internal module, we have just one place: `services`.
 
 Examples of services:
 
-- [`api`](./Redux#API-Service) - module that handles API calls;
+- [`api`](./Redux.md#api-service) - module that handles API calls;
 - `validation` - basic validation helper for forms.
 
 ## Webpack

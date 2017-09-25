@@ -4,6 +4,10 @@ import styled from 'styled-components'
 
 import { ReduxField, Heading, Button } from 'components'
 
+let min = 100
+let max = 300
+let rand = min + (Math.random() * (max - min))
+
 const Form = styled.form`
   width: 100%;
   box-sizing: border-box;
@@ -12,7 +16,7 @@ const Form = styled.form`
 
 const PostForm = ({ handleSubmit, submitting }) => {
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} initialValues={{id: rand}}>
       <Heading level={2}>Create a post</Heading>
       <Field name="title" label="Title" component={ReduxField} />
       <Field name="body" label="Body" type="textarea" component={ReduxField} />

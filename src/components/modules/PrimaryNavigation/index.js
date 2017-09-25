@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { palette } from 'styled-theme'
+import NoteAddIcon from 'material-ui/svg-icons/action/note-add'
 
 import { Link } from 'components'
 
@@ -23,11 +24,23 @@ const Nav = styled.nav`
   }
 `
 
+const styles = css`
+  display: inline-block;
+  background-image: linear-gradient(90deg, #F79533 0%, #F37055 15%, #EF4E7B 30%, #A166AB 44%, #5073B8 58%, #1098AD 72%, #07B39B 86%, #6DBA82 100%);
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+`
+const AddLink = styled(({ theme, reverse, palette, ...props }) =>
+  <Link {...props} />
+)`${styles}`
+
 const PrimaryNavigation = (props) => {
   return (
     <Nav {...props}>
-      <li><Link to="/" activeClassName="active">Welcome</Link></li>
-      <li><Link to="/test" onlyActiveOnIndex activeClassName="active">Editor</Link></li>
+      <li><AddLink to="/test" onlyActiveOnIndex activeClassName="active"><NoteAddIcon /></AddLink></li>
     </Nav>
   )
 }

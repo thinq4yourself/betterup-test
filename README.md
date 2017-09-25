@@ -18,7 +18,6 @@ $ npm install # or yarn
 - [Deploy](#deploy)
 - [Source code](#source-code)
 - [Components](#components)
-  - [Storybook](#storybook)
 - [Containers](#containers)
 - [Store](#store)
   - [Store naming conventions](#store-naming-conventions)
@@ -62,14 +61,6 @@ import { Button, HomePage } from 'components' // src/components
 import App from 'components/App' // src/components/App
 import routes from 'routes' // src/routes
 ```
-
----
-
-### Storybook
-
-This app incorporates [react-storybook](https://github.com/storybooks/react-storybook) for the development process. It helps improve productivity and developer experience. Most of the time we can just use the `storybook` instead of the real webapp while creating components.
-
-You can simply use `npm run storybook` to get it running.
 
 ---
 

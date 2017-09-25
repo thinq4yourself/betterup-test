@@ -16,7 +16,6 @@
     "prebuild": "npm run build:clean && npm run build:copy",
     "build": "npm run env:dev -- webpack --progress",
     "build:prod": "npm run env:prod -- webpack --progress",
-    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "jest": {
     "modulePathIgnorePatterns": [
@@ -35,11 +34,6 @@
     }
   },
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "^3.4.0",
-    "@kadira/storybook": "^2.35.2",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
-    "@kadira/storybook-addon-notes": "^1.0.1",
-    "@kadira/storybook-addon-options": "^1.0.2",
     "@webpack-blocks/dev-server2": "^0.4.0",
     "@webpack-blocks/webpack2": "^0.4.0",
     "babel-core": "^6.21.0",
@@ -73,7 +67,6 @@
     "react-dev-utils": "^0.5.2",
     "redux-mock-store": "^1.2.1",
     "rimraf": "^2.6.1",
-    "storybook-addon-material-ui": "^0.7.7",
     "style-loader": "^0.14.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",

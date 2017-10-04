@@ -53,15 +53,6 @@ const LoggedInView = props => {
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link
-            to={`/@${props.currentUser.username}`}
-            className="nav-link">
-            <img src={props.currentUser.image} className="user-pic" alt={props.currentUser.username} />
-            {props.currentUser.username}
-          </Link>
-        </li>
-
       </ul>
     );
   }
@@ -74,10 +65,6 @@ class Header extends React.Component {
     return (
       <nav className="navbar navbar-light">
         <div className="container-fluid">
-
-          <Link to="/home" className="navbar-brand">
-            {this.props.appName.toLowerCase()}
-          </Link>
 
           <LoggedOutView currentUser={this.props.currentUser} />
 

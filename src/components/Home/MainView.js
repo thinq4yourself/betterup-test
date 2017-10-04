@@ -11,12 +11,16 @@ const GlobalFeedTab = props => {
   };
   return (
     <li className="nav-item">
-      <a
-        href=""
-        className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' }
-        onClick={clickHandler}>
-        My ideas
-      </a>
+      <h3>
+        <small>
+          <a
+            href=""
+            className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' }
+            onClick={clickHandler}>
+            Home
+          </a>
+        </small>
+      </h3>
     </li>
   );
 };

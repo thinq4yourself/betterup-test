@@ -8,13 +8,13 @@ import {
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <div className='center-block sidebar-logo'>
-        <img src='/images/logo.svg' className="sidebar-avatar" />
-        <br />
+      <div className='center-block sidebar-logo-container'>
         <Link
           to='/home'
-          className="nav-link center-block">
-          The Idea Pool
+          className="nav-link text-white center-block">
+          <img src='/images/logo.png' className="sidebar-logo" />
+          <br />
+          {props.appName}
         </Link>
       </div>
     )
@@ -26,13 +26,13 @@ const LoggedInView = props => {
   if (props.currentUser) {
     return (
       <div>
-        <div className='center-block sidebar-logo'>
-          <img src='/images/logo.svg' className="sidebar-avatar" />
-          <br />
+        <div className='center-block sidebar-logo-container'>
           <Link
             to='/home'
-            className="nav-link center-block">
-            The Idea Pool
+            className="nav-link text-white center-block">
+            <img src='/images/logo.png' className="sidebar-logo" />
+            <br />
+            {props.appName}
           </Link>
         </div>
         <div className='center-block'>
@@ -43,12 +43,12 @@ const LoggedInView = props => {
           </Link><br />
           <Link
             to={`/@${props.currentUser.username}`}
-            className="nav-link center-block">
-            {props.currentUser.username}
+            className="nav-link text-white center-block">
+            My Articles
           </Link><br /><br />
           <button
             onClick={props.onClickLogout}
-            className="btn btn-outline-success">
+            className="btn btn-outline-default">
             Logout
           </button>
         </div>
@@ -63,8 +63,8 @@ class Sidebar extends React.Component {
   render() {
     return (
       <nav className='col-sm-3 col-md-2 left-sidebar'>
-        <LoggedOutView currentUser={this.props.currentUser} />
-        <LoggedInView onClickLogout ={this.props.onClickLogout} currentUser={this.props.currentUser} />
+        <LoggedOutView currentUser={this.props.currentUser} appName={this.props.appName} />
+        <LoggedInView onClickLogout ={this.props.onClickLogout} appName={this.props.appName} currentUser={this.props.currentUser} />
       </nav>
     )
   }

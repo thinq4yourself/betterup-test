@@ -1,40 +1,20 @@
-import 'react-hot-loader/patch' // must be first
-import 'babel-polyfill'
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { AppContainer } from 'react-hot-loader'
-import { createHistory } from 'history'
-import { Router, useRouterHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
-import configureStore from 'store/configure'
-import injectTapEventPlugin from 'react-tap-event-plugin'
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import React from 'react';
+import { store, history} from './store';
 
-import routes from 'routes'
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 
-const baseHistory = useRouterHistory(createHistory)({ basename: process.env.PUBLIC_PATH })
-const store = configureStore({}, baseHistory)
-const history = syncHistoryWithStore(baseHistory, store)
-const root = document.getElementById('app')
+import App from './components/App';
 
-const renderApp = () => (
-  <AppContainer>
-    <Provider store={store}>
-      <Router key={Math.random()} history={history} routes={routes} />
-    </Provider>
-  </AppContainer>
-)
+ReactDOM.render((
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Switch>
+        <Route path="/" component={App} />
+      </Switch>
+    </ConnectedRouter>
+  </Provider>
 
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin()
-
-render(renderApp(), root)
-
-if (module.hot) {
-  module.hot.accept('routes', () => {
-    require('routes')
-    render(renderApp(), root)
-  })
-}
-
+), document.getElementById('root'));

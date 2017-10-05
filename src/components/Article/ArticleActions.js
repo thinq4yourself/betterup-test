@@ -42,7 +42,7 @@ class ArticleActions extends React.Component {
             <i className="ion-edit"></i> Edit Article
           </Link>
 
-          <button className="btn btn-outline-secondary btn-sm" onClick={onClick}>
+          <button className="btn btn-outline-secondary btn-sm text-danger" onClick={onClick}>
             <i className="ion-trash-a"></i> Delete Article
           </button>
 
@@ -50,14 +50,14 @@ class ArticleActions extends React.Component {
             <div className='center-block'>
               <h1><small>Are you sure?</small></h1>
               <div className='padded'>
-                <h3><small>The idea will be permanently deleted.</small></h3>
+                <h3><small>The article will be permanently deleted.</small></h3>
               </div>
               <button
                 onClick={onClick}
                 className="btn btn-link btn-default btn-link-default btn-pad-right">
                 CANCEL
               </button>
-              <button className="btn btn-link btn-success" onClick={onConfirm}>
+              <button className="btn btn-primary" onClick={onConfirm}>
                 <i className="ion-trash-a"></i> OK
               </button>
             </div>

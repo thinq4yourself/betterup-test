@@ -36,31 +36,14 @@ const ArticlePreview = props => {
   return (
     <div className="list-group-item">
       <div class="pad">
-        <div className="article-meta">
-          <h4 className="list-group-item-heading">
-            <Link to={`/@${article.author.username}`}>
-              <img src={article.author.image ? article.author.image : 'https://static.productionready.io/images/smiley-cyrus.jpg'} alt={article.author.username} />
-            </Link>
-            <div className="info">
-              <Link className="author" to={`/@${article.author.username}`}>
-                {article.author.username}
-              </Link>
-              <span className="date">
-                {new Date(article.createdAt).toDateString()}
-              </span>
-            </div>
-            <div className="pull-xs-right">
-              <button className={favoriteButtonClass} onClick={handleClick}>
-                <i className="ion-heart"></i> {article.favoritesCount}
-              </button>
-            </div>
-          </h4>
-        </div>
-
         <Link to={`/article/${article.slug}`} className="preview-link">
+          <div className="pull-xs-right">
+            <button className={favoriteButtonClass} onClick={handleClick}>
+              <i className="ion-heart"></i> {article.favoritesCount}
+            </button>
+          </div>
           <h1><small>{article.title}</small></h1>
           <p>{article.description}</p>
-          <span className='btn-text btn-secondary btn-sm'>Read more...</span>
           <ul className="tag-list">
             {
               article.tagList.map(tag => {
@@ -73,6 +56,26 @@ const ArticlePreview = props => {
             }
           </ul>
         </Link>
+        <div className="article-meta">
+          <h4 className="list-group-item-heading">
+            <small>
+              <Link to={`/@${article.author.username}`}>
+                <img src={article.author.image ? article.author.image : 'https://static.productionready.io/images/smiley-cyrus.jpg'} alt={article.author.username} />
+              </Link>
+              <div className="info">
+                <Link className="author" to={`/@${article.author.username}`}>
+                  {article.author.username}
+                </Link>
+                <span className="date">
+                  {new Date(article.createdAt).toDateString()}
+                </span>
+              </div>
+            </small>
+          </h4>
+          <Link to={`/article/${article.slug}`} className="preview-link">
+            <span className='btn-text btn-secondary btn-sm'>Read more...</span>
+          </Link>
+        </div>
       </div>
     </div>
   );
